@@ -12,9 +12,18 @@
 
 The objective is to create an open database of the compounds with their phenotipic profile, also publishing the acquired images in the Bioimage Archive. This comprehensive dataset has the potential to help researchers worldwide to cluster compounds by mode of action, predict biological targets, and discover novel drug leads.
 
-To perform the image analysis 
+The automatic image-analysis workflow is implemented in CellProfiler. Because HepG2 cells are small and often form dense clusters, accurate segmentation can be challenging and typically requires specialized Deep Learning (DL) models, such as StarDist, to reliably delineate individual cells. To integrate StarDist and other BioImage.IO–compatible networks into our pipeline, we have enhanced deepImageJ to run directly within CellProfiler, ensuring seamless execution of advanced segmentation and feature-extraction routines.
 
 ## Installation
+1. Install Fiji.
+2. Go to Help>Update>Manage> Update Sites, there look for `DeepImageJ` and select it. Click on Apply And Close>Close.
+3. Re-start Fiji
+4. Go to Plugins>DeepImageJ>DeepImageJ Run
+5. Click on `Bioimage.io` and download the wanted model
+6. Once downloaded, create your deepImageJ macro. You can create it manually or simply record it. To record, click on `Local`, open an example image, and select Fiji>Plugins>Macro>Record to create the macro that will be used in Cellprofiler. Now click on `Run` within the deepImageJ interface to record the macro.
+7. Install Cellprofiler
+8. Create your pipeline with the deepImageJ macro using the Cellprofiler ImageJ plugin.
+9. Run it!
 
 ### Requirements
 - Fiji
