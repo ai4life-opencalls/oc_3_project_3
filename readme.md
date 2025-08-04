@@ -14,6 +14,13 @@ The objective is to create an open database of the compounds with their phenotip
 
 The automatic image-analysis workflow is implemented in CellProfiler. Because HepG2 cells are small and often form dense clusters, accurate segmentation can be challenging and typically requires specialized Deep Learning (DL) models, such as StarDist, to reliably delineate individual cells. To integrate StarDist and other BioImage.IO–compatible networks into our pipeline, we have enhanced deepImageJ to run directly within CellProfiler, ensuring seamless execution of advanced segmentation and feature-extraction routines.
 
+
+### Requirements
+- Fiji
+- DeepImageJ
+- Cellprofiler
+
+  
 ## Installation
 1. Install Fiji.
 2. Go to Help>Update>Manage> Update Sites, there look for `DeepImageJ` and select it. Click on Apply And Close>Close.
@@ -35,11 +42,6 @@ macro_arg = "model_path=[" + model_path + "] input_path=[" + input_image_path +"
 run("DeepImageJ Run", macro_arg)
 File.rename(output_folder_path + File.separator + "input_mask.tif", Directory +  File.separator + "output.tiff")
 ```
-
-### Requirements
-- Fiji
-- DeepImageJ
-- Cellprofiler
 
 <br><br><br><br>
 
