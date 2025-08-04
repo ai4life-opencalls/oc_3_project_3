@@ -8,18 +8,18 @@
 # Project #3: Improving nuclei segmentation using Cellprofiler and StarDist
 ---
 
-**Martin Neuenschwander** (Forschungsinstitut für Molekulare Pharmakologie, Berlin, Germany) and his colleagues are working on the **AtlaSymbio** project. The major aim of the AtlaSymbio project is to build a subcellular atlas of different symbioses of the plankton.  
-In this OpenCall project, we tried to help scientists study and model microalgae in free-living cell form and their transformations into symbiotic form.  
+**Martin Neuenschwander** (Forschungsinstitut für Molekulare Pharmakologie, Berlin, Germany) and his team are systematically treating HepG2 cells (a cell line of human liver cancer) with hundreds to thousands of small-molecule compounds.  They use the Cell Painting assay, a high‑content fluorescence microscopy method, to image different cellular structures (nucleus, mitochondria, endoplasmic reticulum, cytoskeleton, and more) with multiplexed dyes to understand which of them are affected by the compound. The automated image acquisition and computational feature extraction generate rich, quantitative fingerprints of each compound’s effect on cell morphology and subcellular organization.
 
->"The main research question is to observe how symbiotic microalgae inside hosts are morphologically remodeled using 3D electron microscopy such as FIB-SEM."  
+The objective is to create an open database of the compounds with their phenotipic profile, also publishing the acquired images in the Bioimage Archive. This comprehensive dataset has the potential to help researchers worldwide to cluster compounds by mode of action, predict biological targets, and discover novel drug leads.
 
-The main problem was **semantic segmentation** of Electron Microscopy 3D images (FIB-SEM) using any proper deep learning model. Unfortunately, there were not enough ground-truth annotations for training such a model. Also, doing manual annotations is very time-consuming and extremely expensive.  
-Therefore, we decided to hit this challenge using a different approach. We developed a *napari* plugin to train a *Random Forest* model using extracted embeddings of the *SAM* model for input and just a few scribble labels provided by the user. This approach can do the segmentation of desired organelles almost as well as manual segmentations but in a much shorter time with less manual effort. For the method details, see [here](https://github.com/juglab/napari-sam-labeling-tools/blob/main/docs/index.md).  
+To perform the image analysis 
 
 ## Installation
 
 ### Requirements
-- 
+- Fiji
+- DeepImageJ
+- Cellprofiler
 
 <br><br><br><br>
 
